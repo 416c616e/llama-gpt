@@ -1,5 +1,9 @@
 #!/bin/bash
 
+if [ ! -f /models/${MODEL_FILE} ]; then
+    curl -L -o /models/${MODEL_FILE} ${MODEL_DOWNLOAD_URL}
+fi
+
 make build
 
 # Get the number of available threads on the system
